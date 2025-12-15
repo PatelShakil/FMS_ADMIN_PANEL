@@ -1,0 +1,94 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+    body {
+        @apply bg-gray-50 text-gray-900 antialiased;
+    }
+}
+
+/* Custom component styles */
+@layer components {
+    .btn-primary {
+        @apply bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    .btn-secondary {
+        @apply bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    .btn-danger {
+        @apply bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    .card {
+        @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6;
+    }
+
+    .input {
+        @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors;
+    }
+
+    .label {
+        @apply block text-sm font-medium text-gray-700 mb-2;
+    }
+
+    .error-text {
+        @apply text-sm text-red-600 mt-1;
+    }
+
+    .help-text {
+        @apply text-sm text-gray-500 mt-1;
+    }
+
+    /* Status badges */
+    .badge {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    }
+
+    .badge-pending {
+        @apply bg-yellow-50 text-yellow-700 border border-yellow-200;
+    }
+
+    .badge-reviewed {
+        @apply bg-blue-50 text-blue-700 border border-blue-200;
+    }
+
+    .badge-resolved {
+        @apply bg-green-50 text-green-700 border border-green-200;
+    }
+
+    .badge-rejected {
+        @apply bg-red-50 text-red-700 border border-red-200;
+    }
+}
+
+/* Custom utilities */
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        @apply bg-white;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+}
